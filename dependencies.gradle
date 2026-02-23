@@ -1,0 +1,6 @@
+//file:noinspection DependencyNotationArgument
+
+dependencies {
+    api("com.github.GTNewHorizons:GTNHLib:0.9.24:dev")
+    compileOnly("com.github.GTNewHorizons:NotEnoughItems:2.8.48-GTNH:dev")
+}
