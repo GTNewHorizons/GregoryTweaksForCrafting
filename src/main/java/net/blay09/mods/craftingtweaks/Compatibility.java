@@ -231,7 +231,8 @@ public final class Compatibility {
         }
 
         try {
-            Class<? extends Container> containerClass = Class.forName(className).asSubclass(Container.class);
+            Class<? extends Container> containerClass = Class.forName(className)
+                .asSubclass(Container.class);
             return CraftingTweaksAPI.registerSimpleProvider(modid, containerClass);
         } catch (ClassNotFoundException | ClassCastException e) {
             CraftingTweaks.logger.warn(
@@ -249,7 +250,8 @@ public final class Compatibility {
         }
 
         try {
-            Class<? extends Container> containerClass = Class.forName(className).asSubclass(Container.class);
+            Class<? extends Container> containerClass = Class.forName(className)
+                .asSubclass(Container.class);
             CraftingTweaksAPI.registerProvider(containerClass, provider);
         } catch (ClassNotFoundException | ClassCastException e) {
             CraftingTweaks.logger.warn(
@@ -269,13 +271,8 @@ public final class Compatibility {
         provider.setAlignToGrid(EnumFacing.WEST);
     }
 
-    private static void configureOriginTweakButtons(
-        SimpleTweakProvider provider,
-        boolean rotateEnabled,
-        boolean rotateShowButton,
-        boolean balanceEnabled,
-        boolean balanceShowButton,
-        boolean clearEnabled,
+    private static void configureOriginTweakButtons(SimpleTweakProvider provider, boolean rotateEnabled,
+        boolean rotateShowButton, boolean balanceEnabled, boolean balanceShowButton, boolean clearEnabled,
         boolean clearShowButton) {
         configureTweakButtons(
             provider,
@@ -293,20 +290,10 @@ public final class Compatibility {
             0);
     }
 
-    private static void configureTweakButtons(
-        SimpleTweakProvider provider,
-        boolean rotateEnabled,
-        boolean rotateShowButton,
-        int rotateButtonX,
-        int rotateButtonY,
-        boolean balanceEnabled,
-        boolean balanceShowButton,
-        int balanceButtonX,
-        int balanceButtonY,
-        boolean clearEnabled,
-        boolean clearShowButton,
-        int clearButtonX,
-        int clearButtonY) {
+    private static void configureTweakButtons(SimpleTweakProvider provider, boolean rotateEnabled,
+        boolean rotateShowButton, int rotateButtonX, int rotateButtonY, boolean balanceEnabled,
+        boolean balanceShowButton, int balanceButtonX, int balanceButtonY, boolean clearEnabled,
+        boolean clearShowButton, int clearButtonX, int clearButtonY) {
         provider.setTweakRotate(rotateEnabled, rotateShowButton, rotateButtonX, rotateButtonY);
         provider.setTweakBalance(balanceEnabled, balanceShowButton, balanceButtonX, balanceButtonY);
         provider.setTweakClear(clearEnabled, clearShowButton, clearButtonX, clearButtonY);

@@ -19,10 +19,10 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.lwjgl.input.Mouse;
 
+import com.google.common.collect.Maps;
 import com.gtnewhorizon.gtnhlib.config.ConfigException;
 import com.gtnewhorizon.gtnhlib.config.ConfigurationManager;
 import com.gtnewhorizons.craftingtweaks.Tags;
-import com.google.common.collect.Maps;
 
 import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.common.Loader;

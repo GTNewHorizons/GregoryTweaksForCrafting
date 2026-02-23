@@ -1,15 +1,14 @@
 package net.blay09.mods.craftingtweaks.config;
 
-import com.gtnewhorizon.gtnhlib.config.Config;
-
 import net.blay09.mods.craftingtweaks.CraftingTweaks;
+
+import com.gtnewhorizon.gtnhlib.config.Config;
 
 @Config(modid = CraftingTweaks.MOD_ID, filename = "craftingtweaks-general")
 @Config.Comment("General configuration options for Crafting Tweaks.")
 public class CraftingTweaksConfig {
 
-    @Config.Comment(
-        "This option is toggled by the 'Toggle Buttons' key that can be defined in the Controls settings.")
+    @Config.Comment("This option is toggled by the 'Toggle Buttons' key that can be defined in the Controls settings.")
     @Config.DefaultBoolean(false)
     public static boolean hideButtons;
 
@@ -18,8 +17,7 @@ public class CraftingTweaksConfig {
     public static boolean hideButtonTooltips;
 
     @Config.Sync
-    @Config.Comment(
-        "Set this to true if you want the (de)compress feature to work outside of crafting GUIs (only works if installed on server).")
+    @Config.Comment("Set this to true if you want the (de)compress feature to work outside of crafting GUIs (only works if installed on server).")
     @Config.DefaultBoolean(false)
     public static boolean compressAnywhere;
 }
