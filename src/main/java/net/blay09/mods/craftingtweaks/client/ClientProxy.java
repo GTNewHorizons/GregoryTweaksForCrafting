@@ -29,9 +29,9 @@ import net.minecraftforge.common.MinecraftForge;
 
 import org.lwjgl.input.Keyboard;
 
+import com.google.common.collect.Lists;
 import com.gtnewhorizons.craftingtweaks.mixins.early.minecraft.GuiContainerAccessor;
 import com.gtnewhorizons.craftingtweaks.mixins.early.minecraft.GuiScreenAccessor;
-import com.google.common.collect.Lists;
 
 import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.client.registry.ClientRegistry;

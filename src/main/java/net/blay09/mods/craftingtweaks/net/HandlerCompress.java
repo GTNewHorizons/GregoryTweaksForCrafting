@@ -59,7 +59,9 @@ public class HandlerCompress implements IMessageHandler<MessageCompress, IMessag
                 int size = provider != null ? provider.getCraftingGridSize(entityPlayer, container, 0) : 9;
                 if (size == 9 && mouseStack.stackSize >= 9) {
                     ItemStack result = CraftingManager.getInstance()
-                        .findMatchingRecipe(new InventoryCraftingCompress(container, 3, mouseStack), entityPlayer.worldObj);
+                        .findMatchingRecipe(
+                            new InventoryCraftingCompress(container, 3, mouseStack),
+                            entityPlayer.worldObj);
                     if (result != null) {
                         do {
                             if (entityPlayer.inventory.addItemStackToInventory(result.copy())) {
@@ -67,7 +69,8 @@ public class HandlerCompress implements IMessageHandler<MessageCompress, IMessag
                             } else {
                                 break;
                             }
-                        } while (message.isCompressAll() && mouseSlot.getHasStack() && mouseSlot.getStack().stackSize >= 9);
+                        } while (message.isCompressAll() && mouseSlot.getHasStack()
+                            && mouseSlot.getStack().stackSize >= 9);
                     } else {
                         result = CraftingManager.getInstance()
                             .findMatchingRecipe(
@@ -85,9 +88,10 @@ public class HandlerCompress implements IMessageHandler<MessageCompress, IMessag
                         }
                     }
                 } else if (size >= 4 && mouseStack.stackSize >= 4) {
-                    ItemStack result = CraftingManager.getInstance().findMatchingRecipe(
-                        new InventoryCraftingCompress(container, 2, mouseStack),
-                        entityPlayer.worldObj);
+                    ItemStack result = CraftingManager.getInstance()
+                        .findMatchingRecipe(
+                            new InventoryCraftingCompress(container, 2, mouseStack),
+                            entityPlayer.worldObj);
                     if (result != null) {
                         do {
                             if (entityPlayer.inventory.addItemStackToInventory(result.copy())) {
@@ -95,7 +99,8 @@ public class HandlerCompress implements IMessageHandler<MessageCompress, IMessag
                             } else {
                                 break;
                             }
-                        } while (message.isCompressAll() && mouseSlot.getHasStack() && mouseSlot.getStack().stackSize >= 4);
+                        } while (message.isCompressAll() && mouseSlot.getHasStack()
+                            && mouseSlot.getStack().stackSize >= 4);
                     }
                 }
             }
