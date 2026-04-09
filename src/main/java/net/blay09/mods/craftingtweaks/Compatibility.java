@@ -28,7 +28,7 @@ public final class Compatibility {
     public static void twilightforest() {
         SimpleTweakProvider provider = registerSimpleProvider(
             "TwilightForest",
-            "twilightforest.uncrafting.ContainerTFUncrafting");
+            "twilightforest.inventory.ContainerTFUncrafting");
         if (provider != null) {
             provider.setGrid(2, 9);
             configureStandardTweakButtons(provider);
