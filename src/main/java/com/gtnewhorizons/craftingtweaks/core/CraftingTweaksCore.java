@@ -1,12 +1,14 @@
 package com.gtnewhorizons.craftingtweaks.core;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
 import com.gtnewhorizon.gtnhmixins.IEarlyMixinLoader;
 
+import cpw.mods.fml.relauncher.FMLLaunchHandler;
 import cpw.mods.fml.relauncher.IFMLLoadingPlugin;
 
 @IFMLLoadingPlugin.Name("CraftingTweaks-Core")
@@ -20,10 +22,15 @@ public class CraftingTweaksCore implements IFMLLoadingPlugin, IEarlyMixinLoader 
 
     @Override
     public List<String> getMixins(Set<String> loadedCoreMods) {
-        return Arrays.asList(
-            "minecraft.GuiScreenAccessor",
-            "minecraft.GuiContainerAccessor",
-            "minecraft.MixinGuiScreen_CraftingTweaks");
+        if (FMLLaunchHandler.side()
+            .isClient()) {
+            return Arrays.asList(
+                "minecraft.GuiScreenAccessor",
+                "minecraft.GuiContainerAccessor",
+                "minecraft.MixinGuiScreen_CraftingTweaks");
+        } else {
+            return Collections.emptyList();
+        }
     }
 
     @Override
